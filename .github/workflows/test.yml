@@ -110,6 +110,10 @@ jobs:
           if [[ "${{ matrix.model.name }}" == *"fairchem"* ]]; then
             uv pip install huggingface_hub --system
           fi
+          if [[ "${{ matrix.model.name }}" == *"deepmd"* ]]; then
+            # deepmd-kit backend (exact torch pin, kept out of torch-sim's extras)
+            uv pip install "deepmd-torchsim[deepmd]" --system
+          fi
           pytest -vv -ra -rs --cov=torch_sim --cov-report=xml ${{ matrix.model.test_path }}
 
       - name: Upload coverage to Codecov

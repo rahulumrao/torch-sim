@@ -29,14 +29,6 @@ Overview of the TorchSim API.
     transforms
     units
 
-Model integrations
--------------------
-
-.. toctree::
-    :titlesonly:
-
-    deepmd
-
 
 TorchSim module treemap. Each node represents a Python module. Arrows indicate
 imports between modules. Node color indicates connectedness: blue nodes have fewer
